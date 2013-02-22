@@ -34,7 +34,6 @@ import android.preference.PreferenceManager;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.text.format.DateUtils;
-import android.util.Log;
 
 /**
  * Manages alarms and vibe. Runs as a service so that it can continue to play
@@ -74,7 +73,7 @@ public class AlarmKlaxon extends Service {
                         Log.v("*********** Alarm killer triggered ***********");
                     }
 
-                    sendKillBroadcast((Alarm) msg.obj, false);
+                    sendKillBroadcast((Alarm) msg.obj);
                     stopSelf();
                     break;
                 case INCREASE_VOLUME:
